@@ -5,17 +5,21 @@
 </ion-header>
  
 <ion-content> 
-    <ion-button color="primary" (click)='buscarProfissionais()'>Primary</ion-button>
-  <ion-list>
- 
-    <ion-item button *ngFor="let item of (results | async)" > 
-      <ion-label text-wrap>
-        <h3>{{ item.nome }}</h3>
-        {{ item.cpf }}
-      </ion-label>
- 
-    </ion-item>
- 
-  </ion-list>
- 
+    <ion-button color="primary" (click)='buscarNewsBrasil()'>Primary</ion-button>
+  <ion-list> 
+    <ion-item button *ngFor="let item of (results | async)" >
+      <ion-card>
+        <img src="{{item.urlToImage}}" alt="">
+       <ion-card-content>
+        <ion-card-title>
+          {{item.title}}
+        </ion-card-title>
+        <p>
+          {{item.content}}
+        </p>
+       </ion-card-content>      
+      </ion-card>
+      
+    </ion-item> 
+  </ion-list> 
 </ion-content>

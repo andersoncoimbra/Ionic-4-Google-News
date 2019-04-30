@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ProfissionaisService } from '../services/profissionais.service';
+import { NoticiasService } from '../services/noticias.service';
+
 
 @Component({
   selector: 'app-home',
@@ -12,10 +13,9 @@ export class HomePage implements OnInit {
 
   results: Observable<any>;
 
-  constructor(private profissionais: ProfissionaisService){}
+  constructor(private news: NoticiasService){}
 
-    buscarProfissionais(){
-      this.results = this.profissionais.profissionais();
+    buscarNewsBrasil(){
+      this.results = this.news.noticiasBrasil();
     }
-
 }
